@@ -1,0 +1,38 @@
+<form [formGroup]="userForm" (ngSubmit)='onSubmit()'>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 offset-md-3">
+				<div class="form-group" [ngClass]="{ 'has-error': invalidUsername() }">
+					<label for="userName">Enter Username</label>
+					<input type="text" formConreolName="userName" name="userName" id="userName" placeholder="Enter Unique Username" class="form-control">
+					<p *ngIf="invalidUsername()" id="user_name_error" class="help-block">Invalid User name.</p>
+				</div>
+			</div>
+			<div class="col-6 offset-md-3">
+				<div class="form-group" [ngClass]="{ 'has-error': invalidEmail() }">
+					<label for="email">Email Id</label>
+					<input type="email" formConreolName="email" name="email" id="email" placeholder="Enter Email ID" class="form-control">
+					<p *ngIf="invalidEmail()" id="email_error" class="help-block">Invalid Email ID.</p>
+				</div>
+			</div>
+			<div class="col-6 offset-md-3">
+				<div class="form-group" [ngClass]="{ 'has-error': invalidPasssword() }">
+					<label for="password">Password</label>
+					<input type="password" formConreolName="password" name="password" id="password" placeholder="Enter Password" class="form-control">
+					<p *ngIf="invalidPassword()" id="password_error" class="help-block">Password Length is too short.</p>
+				</div>
+			</div>
+			<div class="col-6 offset-md-3">
+				<div class="form-group" [ngClass]="{ 'has-error': invalidPassword2() }">
+					<label for="repassword">Confirm Password</label>
+					<input type="password" formConreolName="repassword" name="repassword" id="repassword" placeholder="Enter Confirm Password" class="form-control">
+				</div>
+			</div>
+			<div class="col-2 offset-md-5">
+				<div class="form-group has-error">
+					<button type="submit" class="form-control btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
