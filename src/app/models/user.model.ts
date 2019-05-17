@@ -1,5 +1,5 @@
 
-export class UserInfoModel
+export class UseModel
 {
 	customerUid: string;
 	
